@@ -1,24 +1,37 @@
 import React, { Component } from 'react'
 import s from './PlayPause.css'
+import Playpause from 'engine/Playpause'
 
 class PlayPause extends Component {
+
 	state = {
 		paused: false
 	}
+
+	componentDidMount () {
+		window.addEventListener('keydown', (e) => {
+			// Space - 32
+			if (e.keyCode === 32) {
+				this.pauseVideo()
+			}
+		})
+	}
+
 	pauseVideo () {
+		var playpause = new Playpause()
 		this.setState({paused: !this.state.paused})
-		const video = document.querySelector('#video')
 
 		if (this.state.paused) {
-			video.play()
+			playpause.play()
 		} else {
-			video.pause()
+			playpause.pause()
 		}
 	}
+
 	render () {
 		var paused = !this.state.paused 
-			? 'play'
-			: 'pause'
+			? '>'
+			: '||'
 		return (
 			<div className={s.container} onClick={this.pauseVideo.bind(this)}>
 				{paused}

@@ -1,10 +1,32 @@
-import Engine from './Engine'
+import Screen from './Screen'
 
-class Playpause extends Engine {
+export default class Playpause extends Screen {
 	constructor () {
 		super()
 		this.paused = false
 	}
-}
 
-export default Playpause
+	play () {
+		if (this.isInitialized) {
+			this.paused = false
+			this.video.play()
+			// this.stopRender()
+
+			return false
+		}
+
+		console.log('error')
+	}
+
+	pause () {
+		if (this.isInitialized) {
+			this.paused = true
+			this.video.pause()
+			// this.stopRender()
+
+			return false
+		}
+
+		console.log('error')
+	}
+}

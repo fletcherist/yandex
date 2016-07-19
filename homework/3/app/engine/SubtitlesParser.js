@@ -4,7 +4,7 @@ import subs from './subs.js'
 class SubtitlesParser extends Engine {
 	constructor () {
 		super()
-		console.log(subs)
+		// console.log(subs)
 		this.subs = subs
 		this.render = this.render.bind(this)
 	}
@@ -15,7 +15,7 @@ class SubtitlesParser extends Engine {
 
 	splitStr () {
 		this.split = this.subs.split(' ')
-		console.log(this.split)
+		// console.log(this.split)
 	}
 }
 
