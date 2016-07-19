@@ -1,0 +1,275 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial;
+	/*background: url('pics/bg.png');*/
+	font-size: 1.25rem;
+}
+
+
+.background {
+	transition: background-color .5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.background--win {
+	background-color: #FFE200;
+}
+
+.background--lose {
+	background-color: #d02303;
+}
+
+.game {
+	max-width: 80%;
+	width: 100%;
+	margin: 10vh auto;
+	user-select: none;
+}
+
+.row {
+	display: flex;
+	max-width: 500px;
+}
+
+.safe {
+	background: url('../pics/safe.png') 100%;
+	border-radius: 5px;
+	background-position: center;
+	background-size: cover !important;
+	padding: 30px 24px;
+	margin-top: 30px;
+}
+
+.safe__bg {
+	background-color: #212121;
+	margin-top: 25px;
+	margin-left: -2px;
+	transition: filter 10s;
+	-webkit-transition : -webkit-filter 500ms linear;
+	transition: 500ms linear;
+	-webkit-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+
+.safe__bg--gray {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+
+.safe__bg--win {
+	animation: win 1s;
+	animation-iteration-count: 3;
+}
+
+@keyframes win {
+	0% {
+		-webkit-filter: hue-rotate(20deg);
+		filter: hue-rotate(20deg);
+	} 
+	25% {
+		-webkit-filter: hue-rotate(50deg);
+		filter: hue-rotate(50deg);
+	}
+	50% {
+		-webkit-filter: hue-rotate(80deg);
+		filter: hue-rotate(80deg);	
+	}
+	75% {
+		-webkit-filter: hue-rotate(120deg);
+		filter: hue-rotate(120deg);	
+	}
+	100% {
+		-webkit-filter: hue-rotate(170deg);
+		filter: hue-rotate(170deg);	
+	}
+}
+
+@-webkit-keyframes win {
+	0% {
+		-webkit-filter: hue-rotate(20deg);
+		filter: hue-rotate(20deg);
+	} 
+	25% {
+		-webkit-filter: hue-rotate(50deg);
+		filter: hue-rotate(50deg);
+	}
+	50% {
+		-webkit-filter: hue-rotate(80deg);
+		filter: hue-rotate(80deg);	
+	}
+	75% {
+		-webkit-filter: hue-rotate(120deg);
+		filter: hue-rotate(120deg);	
+	}
+	100% {
+		-webkit-filter: hue-rotate(170deg);
+		filter: hue-rotate(170deg);	
+	}
+}
+
+.game__header {
+	color: #37474F;
+}
+
+.game__status {
+	width: 100%;
+	display: flex;
+	/*justify-content: flex-start;*/
+	align-items: center;
+	height: 60px;
+	margin: 10px;
+	transition: visibility 1s;
+	text-align: center;
+}
+
+.game__status-left {
+	width: 60%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.game__status-right {
+	width: 40%;
+	height: 100%;
+	justify-content: center;
+	display: flex;
+}
+
+.game__status--success {
+	text-align: center;
+	width: 90%;
+	animation: toggle 1s;
+	animation-iteration-count: 4;
+	font-size: 30px;
+}
+
+.game__status--fail {
+	text-align: center;
+	width: 90%;
+	animation: toggle 1s;
+	animation-iteration-count: 4;
+	font-size: 30px;
+	color: white;
+}
+
+@keyframes toggle {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.game__ticktime {
+	color: #d02303;
+	text-align: center;
+	font-size: 30px;
+	max-width: 80%;
+	width: 100%;
+	padding: 10px;
+}
+
+.game__timer {
+	align-self: center;
+	color: #d02303;
+	font-weight: bold;
+	font-size: 35px;
+	padding: 5px 15px;
+	border-radius: 5px;
+	transition: background-color .2s;
+}
+
+.game__timer--active {
+	background-color: #FFCCBC;
+}
+
+.game__timer--start {
+	background-color: #AED581;
+	color: #689F38;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: flex;
+}
+
+.game__element {
+	width: 30vw;
+    height: 23vw;
+	background-color: #eee;
+	margin: 5px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.07);
+	background-position: center;
+	transition: transform .2s;
+	background-size: 100% !important;
+	background-position: center !important;
+	background-size: cover !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game__number {
+	align-self: center;
+	text-align: center;
+	width: 100%;
+}
+
+.game__element--null {
+	background-color: red;
+	color: #d02303;
+	box-shadow: 0 1px 10px rgba(0,0,0,0.09), 0 1px 8px rgba(0,0,0,0.27);
+	filter: brightness(0.6);
+	-webkit-filter: brightness(0.6);
+}
+
+.game__element--0 {
+	background: url('../pics/8.jpg');
+}
+
+.game__element--1 {
+	background: url('../pics/0.jpg');
+}
+
+.game__element--2 {
+	background: url('../pics/1.jpg');
+}
+
+.game__element--3 {
+	background: url('../pics/2.jpg');
+}
+
+.game__element--4 {
+	background: url('../pics/3.jpg');
+}
+
+.game__element--5 {
+	background: url('../pics/4.jpg');
+}
+
+.game__element--6 {
+	background: url('../pics/5.jpg');
+}
+
+.game__element--7 {
+	background: url('../pics/6.jpg');
+}
+
+.game__element--8 {
+	background: url('../pics/7.jpg');
+}

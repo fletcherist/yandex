@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Dungeon of Doom</title>
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/app.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/game1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!-- Thanks for assets to Kenny at http://kenney.nl/assets/platformer-pack-redux -->
+    <div class="app container">
+        <div class="level level_0"><div class="door door_locked door_level_0"></div></div>
+        <div class="level level_1" id='game1'><div class="door door_locked door_disabled door_level_1"></div></div>
+        <div class="level level_2" id='game2'><div class="door door_locked door_disabled door_level_2"></div></div>
+        <div class="level level_3" id='game3'><div class="box box_locked door door_disabled door_level_3" id='door3'></div></div>
+        <div class="level level_4"></div>
+
+        <div class="popup popup_hidden popup_level_0">
+            <div class="popup__content popup__content_level_0" touch-action="none">
+                <div class="popup__close">╳</div>
+                <div class="door-riddle">
+                    <div class="door-riddle__button door-riddle__button_0"></div>
+                    <div class="door-riddle__button door-riddle__button_1"></div>
+                    <div class="door-riddle__button door-riddle__button_2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="popup popup_hidden popup_level_1">
+            <div class="popup__content popup__content_level_1" touch-action='none'>
+                <div class="popup__close">╳</div>
+            </div>
+            <div class="slide-to-unlock" id='game1slider'>
+                <div class="slide_wrapper">
+                    <span class="ghost_text"><b>⟩</b> slide to unlock</span>
+                    <span class="text_mask"><b>⟩</b> slide to unlock</span>
+                  </div>
+            </div>
+        </div>
+        <div class="popup popup_hidden popup_level_2">
+            <div class="popup__content popup__content_level_2" touch-action='none'>
+                <div class="popup__close">╳</div>
+            </div>
+        </div>
+        <div class="popup popup_hidden popup_level_3">
+            <div id='level3' class="popup__content popup__content_level_3" touch-action='none'>
+                <div id='reset3' class="popup__close popup__close--3">╳</div>
+                <div id='background' class='background'></div>
+                <div id='game' class='game'>
+                    <div class='game__header'>
+                        <div class='game__status hidden' id='progress'>
+                            <div class='game__status-left' id='message'>Открой сейф<br/> за минуту</div>
+                            <div class='game__status-right'>
+                                <div class='game__timer' id='timer'></div>
+                            </div>
+                        </div>
+                        <div class='game__status hidden' id='start'>
+                            Ты внимательно смотришь?
+                        </div>
+                        <div class='game__status hidden' id='preparation'>
+                            <div class='game__ticktime' id='ticktime'></div>
+                        </div>
+                        <div class='game__status hidden' id='success'>
+                            <div class='game__status--success'>Ты победил!</div>
+                        </div>
+                        <div class='game__status hidden' id='fail'>
+                            <div class='game__status--fail'>Ты проиграл!</div>
+                        </div>
+                    </div>
+                    <div class='safe'>
+                        <div class='safe__bg' id='gamePole'>
+                            <div class='row'>
+                                <div class='game__element' id='e0'></div>
+                                <div class='game__element' id='e1'></div>
+                                <div class='game__element' id='e2'></div>
+                            </div>
+                            <div class='row'>
+                                <div class='game__element' id='e3'></div>
+                                <div class='game__element' id='e4'></div>
+                                <div class='game__element' id='e5'></div>
+                            </div>
+                            <div class='row'>
+                                <div class='game__element' id='e6'></div>
+                                <div class='game__element' id='e7'></div>
+                                <div class='game__element' id='e8'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dist/bundle.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+    <script src="src/js/doorBase.js"></script>
+    <script src="src/js/doorOthers.js"></script>
+    <script src="src/js/app.js"></script>
+    <script src="src/js/game1.js"></script>
+</body>
+</html>

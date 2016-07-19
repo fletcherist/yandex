@@ -1,0 +1,476 @@
+body {
+	font-family: 'PT Serif', serif;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pic {
+	text-align: center;
+	color: white;
+	overflow: hidden;
+	height: 80vh;
+}
+
+.pic__full {
+	height: 80vh;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position:center;
+	filter: brightness(.7);
+	-webkit-filter: brightness(.7);
+	z-index: -9999;
+	width: 100%;
+	position: absolute;
+	display: block;
+}
+
+.pic__header {
+}
+
+.pic__title {
+	letter-spacing: 20;
+	font-weight: bold;
+	font-size: 52px;
+	padding: 30vh 40px 0px 40px;
+	line-height: 80px;
+	text-align: center;
+}
+
+.pic__title--smaller {
+	font-size: 30px;
+	line-height: 50px;
+	padding: 30vh 8px 0px 8px;
+	letter-spacing: 8;
+	margin-top: 40px;
+}
+
+.pic__title--end {
+	font-size: 34px;
+	line-height: 50px;
+	padding: 30vh 8px 0px 8px;
+	letter-spacing: 8;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: 580px) {
+	.pic__title {
+		font-size: 42px;
+		padding: 30vh 16px 0px 16px;
+	}
+
+	.pic__title--smallm {
+		font-size: 24px;
+		line-height: 40px;
+		padding: 30vh 16px 0px 16px;
+		letter-spacing: 12;
+		margin-top: 50px;
+	}
+
+	.pic__title--smaller {
+		font-size: 16px;
+		line-height: 40px;
+		padding: 30vh 8px 0px 8px;
+		letter-spacing: 8;
+		margin-top: 40px;
+	}
+
+	.pic__souce--link {
+		display: none;
+	}
+
+	.pic__title--end  {
+		font-size: 16px;
+		line-height: 40px;
+		padding: 30vh 40px 0px 40px;
+		letter-spacing: 8;
+		max-width: 250px;
+	}
+}
+
+.pic__subtitle {
+	letter-spacing: 4;
+}
+
+.pic__title, .pic__subtitle {
+	text-transform: uppercase;
+}
+
+.pic__source {
+	margin-top: 180px;
+}
+
+.pic__author {
+
+}
+
+.pic__source, .pic__author {
+	font-size: 13px;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.info {
+	margin-top: 8vh;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 920px;
+	display: flex;
+	flex-flow: 1;
+	flex-shrink: 1;
+	flex-direction: row;
+}
+
+.info--second {
+	margin-top: 2vh;
+	margin-bottom: 10vh;
+}
+
+.info--quote {
+	margin-bottom: 10vh;
+}
+
+@media screen and (max-width: 520px) {
+	.info--second, .info__quote {
+		margin-bottom: 5vh;
+	}
+	.info {
+		margin-top: 5vh;
+	}
+}
+
+.info__left {
+	margin: 0px 40px 0px 40px;
+	width: 100%;
+}
+
+.info__right {
+	margin-left: 10%;
+	max-width: 35%;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	position: relative;
+	flex-wrap: wrap;
+	margin: 0px 40px 0px 40px;
+	word-wrap: break-word;
+}
+
+
+@media screen and (max-width: 768px) {
+	.info {
+		flex-direction: column;
+	}
+
+	.info__left, .info__divider {
+		margin-left: 5%;
+		margin-right: 5%; 
+		order: 2;
+		max-width: 90%;
+		margin-top: 24px;
+	}
+
+	.info__right {
+		margin-left: 5%;
+		margin-right: 5%;
+		order: 1;
+		max-width: 90%;
+		margin-bottom: 30px;
+		margin-bottom: 5vh;
+	}
+
+	.info__right--bottom {
+		order: 3;
+	}
+}
+@media screen and (max-width: 520px) {
+	.info__right {
+		margin-left: 5%;
+		margin-right: 5%;
+		max-width: 90%;
+		margin: 0px auto;
+	}
+}
+
+.info__headline {
+	font-size: 38px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	margin-top: 120px;
+}
+
+.info__notice {
+	border-left: 4px solid #F0EFEA;
+	padding-left: 15px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	align-self: flex-start;
+	order: 0;
+}
+
+.info__annotation {
+	border: 0px;
+	margin-top: 30px !important;
+	font-size: 20px;
+	padding: 0px;
+	margin: auto;
+}
+
+.info__notice--bottom {
+	position: absolute;
+	bottom: 0;
+	order: 1;
+}
+
+.info__notice--small {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 20px !important;
+}
+
+.info__text {
+	margin-top: 0px;
+}
+
+.info__text {
+	line-height: 24px;
+}
+
+.info__notice {
+	line-height: 22px;
+}
+
+.info__divider {
+	margin: 20px 0px;
+}
+
+.info__break {
+	height: 40px;
+}
+
+.info__picture {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+.info__picutre--no-margin {
+	margin-bottom: 0px;
+}
+
+.info__picture img {
+	max-width: 100%;
+}
+
+.info__right--picture {r
+	margin-top: 5vh;
+	margin-bottom: 0;
+}
+
+.image--100vh {
+	margin-top: 210px;
+}
+
+@media screen and (max-width: 768px) {
+	.info__notice--bottom {
+		margin-top: 50px;
+		position: relative;
+	}
+
+	.info__picture--first {
+		margin-top: 5vh;
+	}
+
+	.info__picture img {
+		margin: 0px auto;
+		display: block;
+		max-width: 60%;
+		height: auto;
+	}
+
+	.info__annotation {
+		margin: auto;
+		max-width: 60%;
+	}
+
+	.info__notice {
+		max-width: 65%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.image--100vh {
+		margin-top: 0px;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.info__picture {
+
+	}
+
+	.info__picture--first {
+		margin-top: 0px;
+	}
+
+	.info__picture img {
+		margin: 0px auto;
+		display: block;	
+		max-width: 100%;
+		height: auto;
+		margin-top: 40px;
+	}
+
+	.info__right--picture {
+		max-width: 100%;
+	}
+
+	.info__annotation {
+		max-width: 80%;
+	}
+
+	.info__notice--bottom {
+		margin-top: 20px;
+	}
+}
+
+.info__text--capitalize::first-letter {
+	font-size: 48px;
+	line-height: 0px;
+	font-weight: bold;
+}
+
+.pic__full--1 { 
+	background-image: url(assets/css/article-images/Unknown-6.jpeg);
+}
+
+.pic__full--2 { 
+	background-image: url(assets/css/article-images/Unknown-9.jpeg);
+}
+
+.pic__full--3 { 
+	background-image: url(assets/css/article-images/Unknown-11.jpeg);
+}
+
+.pic__full--4 { 
+	background-image: url(assets/css/article-images/Unknown-16.jpeg);
+}
+
+.pic__full--5 { 
+	background-image: url(assets/css/article-images/Unknown-12.jpeg);
+}
+
+.pic__full--6 { 
+	background-image: url(assets/css/article-images/Unknown-1.jpeg);
+	height: 100vh;
+	filter: none;
+	-webkit-filter: none;
+}
+
+.pic__full--7 { 
+	background-image: url(assets/css/article-images/Unknown-4.jpeg);
+	height: 100vh;
+	filter: none;
+	-webkit-filter: none;
+}
+
+.pic__full--8 { 
+	background-image: url(assets/css/article-images/Unknown-3.jpeg);
+	height: 100vh;
+	filter: none;
+	-webkit-filter: none;
+}
+
+.pic__full--9 { 
+	background-image: url(assets/css/article-images/Unknown.jpeg);
+}
+
+.pic__full--10 { 
+	background-image: url(assets/css/article-images/Unknown-17.jpeg);
+}
+
+
+@media screen and (max-width: 768px) {
+	.pic__full--1 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-6.jpeg);
+	}
+
+	.pic__full--2 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-9.jpeg);
+	}
+
+	.pic__full--3 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-11.jpeg);
+	}
+
+	.pic__full--4 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-16.jpeg);
+	}
+
+	.pic__full--5 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-12.jpeg);
+	}
+
+	.pic__full--6 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-1.jpeg);
+	}
+
+	.pic__full--7 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-4.jpeg);
+	}
+
+	.pic__full--8 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-3.jpeg);
+	}
+
+	.pic__full--9 { 
+		background-image: url(assets/css/article-images/tablet/Unknown.jpeg);
+	}
+
+	.pic__full--10 { 
+		background-image: url(assets/css/article-images/tablet/Unknown-17.jpeg);
+	}	
+}
+
+@media screen and (max-width: 520px) {
+	.pic__full--1 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-6.jpeg);
+	}
+
+	.pic__full--2 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-9.jpeg);
+	}
+
+	.pic__full--3 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-11.jpeg);
+	}
+
+	.pic__full--4 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-16.jpeg);
+	}
+
+	.pic__full--5 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-12.jpeg);
+	}
+
+	.pic__full--6 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-1.jpeg);
+	}
+
+	.pic__full--7 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-4.jpeg);
+	}
+
+	.pic__full--8 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-3.jpeg);
+	}
+
+	.pic__full--9 { 
+		background-image: url(assets/css/article-images/mobile/Unknown.jpeg);
+	}
+
+	.pic__full--10 { 
+		background-image: url(assets/css/article-images/mobile/Unknown-17.jpeg);
+	}	
+}

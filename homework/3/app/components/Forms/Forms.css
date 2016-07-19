@@ -1,0 +1,13 @@
+.forms {
+	max-width: 80%;
+	margin: 0px auto;
+}
+
+.input {
+	display: block;		
+}
+
+.button {
+	margin-top: 20px;
+	float: right;
+}

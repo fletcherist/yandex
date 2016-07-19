@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>game</title>
+	<meta charset='utf-8'>
+	<link href='./src/style.css' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id='background' class='background'></div>
+	<div id='game' class='game' touch-action='none'>
+		<div class='game__header'>
+			<div class='game__status hidden' id='progress'>
+				<div class='game__status-left' id='message'>Открой сейф<br/> за минуту</div>
+				<div class='game__status-right'>
+					<div class='game__timer' id='timer'></div>
+				</div>
+			</div>
+			<div class='game__status hidden' id='start'>
+				Ты внимательно смотришь?
+			</div>
+			<div class='game__status hidden' id='preparation'>
+				<div class='game__ticktime' id='ticktime'></div>
+			</div>
+			<div class='game__status hidden' id='success'>
+				<div class='game__status--success'>Ты победил!</div>
+			</div>
+			<div class='game__status hidden' id='fail'>
+				<div class='game__status--fail'>Ты проиграл!</div>
+			</div>
+		</div>
+		<div class='safe'>
+			<div class='safe__bg' id='gamePole'>
+				<div class='row'>
+					<div class='game__element' id='e0'></div>
+					<div class='game__element' id='e1'></div>
+					<div class='game__element' id='e2'></div>
+				</div>
+				<div class='row'>
+					<div class='game__element' id='e3'></div>
+					<div class='game__element' id='e4'></div>
+					<div class='game__element' id='e5'></div>
+				</div>
+				<div class='row'>
+					<div class='game__element' id='e6'></div>
+					<div class='game__element' id='e7'></div>
+					<div class='game__element' id='e8'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+<script type='text/javascript' src='./dist/bundle.js'></script>
+</html>
