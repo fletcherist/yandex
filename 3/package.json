@@ -73,11 +73,11 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": "airbnb",
+    "extends": "",
     "env": {
-      "browser": true,
-      "node": true,
-      "mocha": true
+      "browser": false,
+      "node": false,
+      "mocha": false
     },
     "rules": {
       "max-len": 0
@@ -91,20 +91,8 @@
     }
   },
   "stylelint": {
-    "extends": "stylelint-config-standard",
+    "extends": "",
     "rules": {
-      "color-hex-case": "upper",
-      "string-quotes": "single",
-      "font-family-name-quotes": "always-where-recommended",
-      "selector-pseudo-class-no-unknown": [
-        true,
-        {
-          "ignorePseudoClasses": [
-            "global"
-          ]
-        }
-      ],
-      "indentation": 2
     }
   },
   "dllPlugin": {
