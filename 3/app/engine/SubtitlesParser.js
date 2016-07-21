@@ -12,7 +12,7 @@ export function fetchSubtitles () {
       .then(r => r.text())
       .then(r => parseSubtitles(r))
       .then(subtitles => {
-        window.SUBTITLES = subtitles
+        window.SUBTITLES = subs
       })
   })
 }
