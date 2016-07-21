@@ -78,13 +78,14 @@ function pauseVideoWhenSubs () {
 class Screen extends Component {
 	componentDidMount () {
 		var video = document.querySelector('#video')
+		video.src = `${window.PROXY_URL}/${window.VIDEO_LINK}`
+
 		var canvas = document.querySelector('#canvas')
 		var context = canvas.getContext('2d')
 		var back = document.createElement('canvas')
 		var backContext = back.getContext('2d')
 
 		var cw, ch
-
 		window.VIDEO = video
 
 		setTimeout(() => {
@@ -131,7 +132,6 @@ class Screen extends Component {
 						id='video' 
 						className={s.video__orig}
 						crossOrigin={'Anonymous'}>
-					<source src={`${window.PROXY_URL}/${window.VIDEO_LINK}`} />
 				</video>
 				<canvas id='canvas' className={s.video__canvas}></canvas>
 			</div>

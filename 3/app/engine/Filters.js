@@ -71,13 +71,31 @@ export function subtitlesFilter (ctx, w, h) {
   var fh = 12
   var spl = 20
   var text = window.CURRENT_SUBTITLE.message
-  var font = '18px \'Oranienbaum\''
+
+  var fontSize = 18
+  if (text.length > 30) {
+    fontSize = 16
+  } else if (text.length > 40) {
+    fontSize = 14
+  }
+
+  fontSize += 'px'
+  var font = `${fontSize} \'Oranienbaum\'`
+
   ctx.font = font
   ctx.strokeStyle = 'black'
-  ctx.lineWidth = 5
+  
   ctx.fillStyle = 'black'
   ctx.fillRect(x, y, w, h);
   ctx.fillStyle = 'white'
+
+  ctx.lineWidth = 2
+  ctx.strokeStyle = 'white'
+  ctx.strokeRect(20, 20, w - 40, h - 40)
+
+  ctx.strokeStyle = 'black'
+  ctx.strokeRect(60, 60, w - 60, h - 60)
+
 
   // Paint text
   var lines = splitLines(ctx, w, font, text)
@@ -98,13 +116,17 @@ export function subtitlesFilter (ctx, w, h) {
 }
 
 var splitLines = function(ctx, mw, font, text) {
-	mw = mw - 10
+	mw = mw - 100
 	ctx.font = font
 	var words = text.split(' ')
 	var newLine = words[0]
 	var lines = []
 	for(var i = 1; i < words.length; ++i) {
-	  if (ctx.measureText(newLine + " " + words[i]).width < mw) {
+    if (words[i].match(/\n/)) {
+      lines.push(newLine)
+      newLine = words[i]
+    } else if (ctx.measureText(newLine + " " + words[i]).width < mw) {
+      words[0].split('\n')
       newLine += " " + words[i]
 	  } else {
       lines.push(newLine)

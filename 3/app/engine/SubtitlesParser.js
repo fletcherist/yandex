@@ -9,7 +9,6 @@ export function fetchSubtitles () {
       .then(r => parseSubtitles(r))
       .then(subtitles => {
         window.SUBTITLES = subtitles
-        console.log(window.SUBTITLES)
       })
   })
 }
