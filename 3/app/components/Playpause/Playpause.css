@@ -1,0 +1,10 @@
+.container {
+	height: 50px;
+	-webkit-user-select: none;
+	user-select: none;
+	color: white;
+	font-size: 30px;
+	letter-spacing: 5px;
+	margin-left: 10px;
+	font-weight: bold;
+}

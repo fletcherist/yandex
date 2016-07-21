@@ -1,0 +1,23 @@
+.screen {
+	height: 100%;
+	width: 100%;
+	background-color: #ECEFF1;
+}
+
+.screen video {
+	width: 100%;
+	height: 100%;
+}
+
+.video__orig {
+	position: absolute;
+	top: 500px;
+	visibility: hidden;
+	/*display: none;*/
+	/*margin-top: 300px;*/
+	/*display: none;*/
+}
+
+.video__canvas {
+
+}
