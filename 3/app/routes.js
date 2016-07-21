@@ -12,13 +12,15 @@ const loadModule = (cb) => (componentModule) => {
   cb(null, componentModule.default);
 };
 
+// console.log(__NODE_ENV__)
+
 export default function createRoutes() {
   // Create reusable async injectors using getAsyncInjectors factory
   // const { injectReducer, injectSagas } = getAsyncInjectors(store);
 
   return [
     {
-      path: '/',
+      path: '/(yandex/3/build)',
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
@@ -35,7 +37,7 @@ export default function createRoutes() {
       },
     },
     {
-      path: '/player',
+      path: '/(yandex/3/build/)player',
       name: 'player',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
