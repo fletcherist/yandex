@@ -4,13 +4,15 @@ import RaisedButton from 'material-ui/RaisedButton'
 import TextField from 'material-ui/TextField'
 import Card from 'material-ui/Card'
 import { connect } from 'react-redux'
-import { push } from 'react-router-redux';
+
+import CircularProgress from 'material-ui/CircularProgress'
 
 import 'engine/globals'
-
 import FloatingActionButton from 'material-ui/FloatingActionButton'
 import ContentAdd from 'material-ui/svg-icons/content/add'
 
+import { fetchSubtitles } from 'engine/SubtitlesParser'
+import { fetchOldVideoLayer, fetchAudio } from 'engine/Filters'
 
 class Forms extends Component {
 	state = {
@@ -69,11 +71,18 @@ class Forms extends Component {
 			window.SUBS_LINK = this.subs.input.value
 			window.AUDIO_LINK = this.audio.input.value
 
-			console.log(this.props.dispatch)
-			setTimeout(() => {
-				this.props.dispatch(push(`/player`))
-			}, 1000)
 			console.log(window.VIDEO_LINK)
+			var divForms = document.querySelector('#divforms')
+			var divVideo = document.querySelector('#divplayer')
+			console.log(divForms, divVideo)
+			divForms.style.display = 'none'
+			divVideo.style.display = 'block'
+
+			return Promise.all([
+				fetchSubtitles(), fetchOldVideoLayer(), fetchAudio()
+			]).then(() => {
+				console.log('Player has been initialized')
+			})
 		}
 	}
 
@@ -86,6 +95,7 @@ class Forms extends Component {
 
 		this.audio.floatingLabelText = ''
 		this.audio.input.value = window.AUDIO_LINK
+
 	}
 
 	render () {

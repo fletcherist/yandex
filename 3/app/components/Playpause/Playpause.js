@@ -31,8 +31,8 @@ class PlayPause extends Component {
 
 	render () {
 		var paused = !this.state.paused 
-			? '>'
-			: '||'
+			? '||'
+			: '>'
 		return (
 			<div className={s.container} onClick={this.pauseVideo.bind(this)}>
 				{paused}
