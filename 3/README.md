@@ -1,1 +1,7 @@
---version 1
+install
+
+git clone
+
+npm install
+
+npm start
