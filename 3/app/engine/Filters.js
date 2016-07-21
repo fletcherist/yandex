@@ -1,10 +1,13 @@
 import { isTimeForSubtitles } from './SubtitlesParser'
-import noiseLayer from './old.mp4'
 
 export function fetchOldVideoLayer () {
   return new Promise (resolve => {
     window.OLD_VIDEO = document.createElement('video')
-    window.OLD_VIDEO.src = noiseLayer
+    // window.crossOrigin = 'Anonymous'
+    window.OLD_VIDEO.crossOrigin = 'Anonymous'
+    window.OLD_VIDEO.src = `${window.PROXY_URL}/${window.OLD_VIDEO_LAYER}`
+
+    console.log(window.OLD_VIDEO.src)
 
     resolve()
   })
@@ -13,7 +16,7 @@ export function fetchOldVideoLayer () {
 export function fetchAudio () {
   return new Promise (resolve => {
     window.AUDIO = document.createElement('audio')
-    window.AUDIO.src = window.AUDIO_LINK
+    window.AUDIO.src = `${window.AUDIO_LINK}`
     document.body.appendChild(window.AUDIO)
 
     resolve()
