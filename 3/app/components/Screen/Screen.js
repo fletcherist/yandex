@@ -88,10 +88,10 @@ class Screen extends Component {
 		var cw, ch
 		window.VIDEO = video
 
+		video.volume = 0
 		// setTimeout(() => {
 		// 	window.AUDIO.play()
 		// 	video.play()
-		// 	video.volume = 0
 		// }, 2000)
 
 		video.addEventListener('subt', () => {

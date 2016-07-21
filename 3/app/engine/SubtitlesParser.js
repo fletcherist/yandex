@@ -4,7 +4,11 @@ import subs from './subs.js'
 
 export function fetchSubtitles () {
   return new Promise (resolve => {
-    fetch(`${window.PROXY_URL}/${window.SUBS_LINK}`)
+    fetch(`${window.PROXY_URL}/${window.SUBS_LINK}`, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'default'
+    })
       .then(r => r.text())
       .then(r => parseSubtitles(r))
       .then(subtitles => {
